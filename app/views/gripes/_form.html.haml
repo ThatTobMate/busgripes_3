@@ -1,0 +1,52 @@
+= form_for(@gripe) do |f|
+  - if @gripe.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@gripe.errors.count, "error")
+        prohibited this gripe from being saved:
+      %ul
+        - @gripe.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :bus_number
+    %br/
+    = f.text_field :bus_number
+  / hidden field - user_id? don't think so
+  .field
+    = f.label :gripe1
+    %br/
+    = f.text_field :gripe1
+  .field
+    = f.label :gripe2
+    %br/
+    = f.text_field :gripe2
+  .field
+    = f.label :gripe3
+    %br/
+    = f.text_field :gripe3
+  .field
+    = f.label :gripe4
+    %br/
+    = f.text_field :gripe4
+  .field
+    = f.label :picture
+    %br/
+    = f.text_area :picture
+  .field
+    = f.label :comment
+    %br/
+    = f.text_area :comment
+  .field
+    = f.label :bus_stop
+    %br/
+    = f.text_field :bus_stop
+  .field
+    = f.label :map_lat
+    %br/
+    = f.text_field :map_lat
+  .field
+    = f.label :map_long
+    %br/
+    = f.text_field :map_long
+  .actions
+    = f.submit

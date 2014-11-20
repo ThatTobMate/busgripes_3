@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  gripe1: MyString
+  gripe2: MyString
+  gripe3: MyString
+  gripe4: MyString
+  picture: MyText
+  comment: MyText
+  bus_stop: MyString
+  map_lat: MyString
+  map_long: MyString
+
+two:
+  gripe1: MyString
+  gripe2: MyString
+  gripe3: MyString
+  gripe4: MyString
+  picture: MyText
+  comment: MyText
+  bus_stop: MyString
+  map_lat: MyString
+  map_long: MyString
