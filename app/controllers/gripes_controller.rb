@@ -46,6 +46,9 @@ class GripesController < ApplicationController
     @gripe = Gripe.new(params[:gripe])
     @gripe.user_id = current_user.id
     # current_user.gripes.new(params[:gripe])
+    #bus number to int? - some have string
+    #
+    #method to get the location input from user and send to google via ajax
     respond_to do |format|
       if @gripe.save
         format.html { redirect_to @gripe, notice: 'Gripe was successfully created.' }
