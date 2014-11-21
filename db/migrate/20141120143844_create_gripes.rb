@@ -9,10 +9,10 @@ class CreateGripes < ActiveRecord::Migration
       t.text :picture
       t.text :comment
       t.string :bus_stop
-      t.float :map_lat
-      t.float :map_long
+      t.float :latitude
+      t.float :longitude
       t.string :bus_number
-      t.text :location
+      t.text :address
 
       t.timestamps
     end

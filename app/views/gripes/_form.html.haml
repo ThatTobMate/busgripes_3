@@ -7,6 +7,7 @@
       %ul
         - @gripe.errors.full_messages.each do |msg|
           %li= msg
+  %h3 Which bus number        
   .field
     = f.label :bus_number
     %br/
@@ -14,20 +15,19 @@
   .field
     =f.label :gripe1
     %br
-    =f.select(:gripe1)
-      = options_for_select([['Bus', 1], ['Naughty Bus', 2]])
+    =f.select(:gripe1, options_for_select([['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
   .field
-    = f.label :gripe2
-    %br/
-    = f.text_field :gripe2
+    =f.label :gripe2
+    %br
+    =f.select(:gripe1, options_for_select([['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
   .field
-    = f.label :gripe3
-    %br/
-    = f.text_field :gripe3
+    =f.label :gripe3
+    %br
+    =f.select(:gripe1, options_for_select([['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
   .field
-    = f.label :gripe4
-    %br/
-    = f.text_field :gripe4
+    =f.label :gripe4
+    %br
+    =f.select(:gripe1, options_for_select([['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
   .field
     = f.label :picture
     %br/
@@ -36,13 +36,16 @@
     = f.label :comment
     %br/
     = f.text_area :comment
+  %h3 Where did this happen?  
+  %b Enter address  
   .field
     = f.label :bus_stop
     %br/
     = f.text_field :bus_stop
+  %b OR Enter address  
   .field
-    = f.label :location
+    = f.label :address
     %br/
-    = f.text_field :location
+    = f.text_field :address
   .field
     = f.submit

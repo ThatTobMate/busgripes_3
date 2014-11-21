@@ -11,8 +11,9 @@ h1 Bus Gripes
     %th Picture
     %th Comment
     %th Bus stop
-    %th Map lat
-    %th Map long
+    %th Latitude
+    %th Longitude
+    %th Address
     %th
     %th
     %th
@@ -25,8 +26,9 @@ h1 Bus Gripes
       %td= gripe.picture
       %td= gripe.comment
       %td= gripe.bus_stop
-      %td= gripe.map_lat
-      %td= gripe.map_long
+      %td= gripe.latitude
+      %td= gripe.longitude
+      %td= gripe.address
       %td= link_to 'Show', gripe
       %td= link_to 'Edit', edit_gripe_path(gripe)
       %td= link_to 'Destroy', gripe, method: :delete, data: { confirm: 'Are you sure?' }

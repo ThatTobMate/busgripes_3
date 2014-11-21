@@ -6,7 +6,10 @@ class GripesController < ApplicationController
 
   def index
     @gripes = Gripe.all
-
+    @hash = Gmaps4rails.build_markers(@users) do |user, marker |
+      marker.lat gripe.latitude
+      marker.lng gripe.longitude
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @gripes }

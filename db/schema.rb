@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(:version => 20141120152526) do
     t.text     "picture"
     t.text     "comment"
     t.string   "bus_stop"
-    t.float    "map_lat"
-    t.float    "map_long"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "bus_number"
-    t.text     "location"
+    t.text     "address"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
