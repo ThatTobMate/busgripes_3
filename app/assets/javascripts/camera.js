@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", function() {
   var canvas = document.getElementById("canvas"),
     context = canvas.getContext("2d"),
     video = document.getElementById("video"),
-    videoObj = { "video": true },
+    videoObj = { "video": true, "audio": true },
     errBack = function(error) {
       console.log("Video capture error: ", error.code); 
     };

@@ -1,19 +1,174 @@
  /*recommended from googlemaps*/
   html { height: 100% }
-  body { height: 100%; margin: 0; padding: 0 }
+  body { 
+    height: 100%; 
+    margin: 0; 
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+/*    font-family: 'Open Sans', sans-serif; */
+    color: rgb(72, 74, 87);
+    background-color: rgb(67, 72, 68);
+  }
+
+  header{
+  clear: both;
+  }
+
+  header img{
+    height: 60px;
+    width: 60px;
+    float: left;
+    margin: 0% 3% 1% 0%;
+  }
+
+  h1{
+    font-family: 'Varela', sans-serif;
+    font-size: 30px;
+    /*color: rgb(75, 37, 93);*/
+    color: #0E3A42;
+    float: left;
+    margin: 0% 1% 1% 0%;
+    letter-spacing: 1px;
+    line-height: 2em;
+  }
+
+  .user-nav{
+    float: left;
+  }
+
+  nav{
+    clear: both;
+    margin: 10px 0px 15px 0px;
+    li{
+      list-style-type: none;
+      display: inline-block;
+      a{
+        text-decoration: none;
+        background-color: grey;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    }
+  }
 
   #map-canvas-container{
     width: 500px;
-    height: 500px;
+    height: 600px;
+    margin: 0 auto;
   }
 
   /*#map-canvas { height: 100% }*/
 
   #map{
-    height: 400px;
-    width: 400px;
+    height: 600px;
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  hr{
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(100,100,100,0), rgba(100,100,100,0.75), rgba(100,100,100,0)); 
+/*    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); */
+  }
+
+  #take-photo{
+    background-color: green;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .container{
+    background-color: rgb(134, 198, 197);
+    width: 500px;
+    padding: 30px;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px #222;
+  }
+
+  form{
+    width: 500px;
+    clear: both;
+  }
+
+  form input{
+    height: 30px;
+    font-family: 'Quicksand', sans-serif;
+    width: 80px;
+    border-radius: 5px;
+    border: solid #ccc 1px;
+    color: grey;
+    font-size: 18px;
+  }
+
+  .field select {
+    height: 30px;
+    width: 100%;
+    font-family: 'Quicksand', sans-serif;
+    background-color: white;
+    border-radius: 5px;
+    border: solid #ccc 1px;
+    color: grey;
+    font-size: 18px;
+    text-align: center;
+    margin: 3px auto 20px;
   }
 
   textarea{
-    height: 100px;
+    height: 150px;
+    width: 100%;
+    font-family: 'Quicksand', sans-serif;
+    border-radius: 5px;
+    border: solid #ccc 1px;
+    color: grey;
+    font-size: 14px;
+  }
+
+  #gripe_address{
+    width: 400px;
+  }
+
+/*++++ drop down select hack ++++ */
+  .select_file_wrapper{
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    /*top: 0;*/
+    z-index: 2;
+  }
+
+  /*#gripe_picture*/
+  .select_file_field button{
+    width: 150px;
+    height: 30px;
+    font-family: 'Quicksand', sans-serif;
+    background-color: white;
+    border-radius: 5px;
+    border: solid #ccc 1px;
+    color: grey;
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+    /*top: 0;*/
+    z-index: 1;
+  }
+
+  .create_gripe{
+    background-color: green;
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px;
+/*    width: 80px;
+    height: 40px;*/
+    font-size: 14px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
   }

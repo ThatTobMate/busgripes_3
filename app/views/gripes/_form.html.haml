@@ -7,46 +7,65 @@
       %ul
         - @gripe.errors.full_messages.each do |msg|
           %li= msg
-  %h3 Which bus number        
+  %hr
+  %h3 What's the bus number?        
   .field
     = f.label :bus_number
     %br/
     = f.text_field :bus_number
+  / %h3 Registration number       
+  / .field
+  /   = f.label :registration_number
+  /   %br/
+  /   = f.text_field :registration_number
+  %hr
+  %h3 What's your gripe?  
   .field
     =f.label :gripe1
     %br
-    =f.select(:gripe1, options_for_select([['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
+    =f.select(:gripe1, options_for_select([['choose a gripe', 0],['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
   .field
     =f.label :gripe2
     %br
-    =f.select(:gripe1, options_for_select([['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
+    =f.select(:gripe1, options_for_select([['choose a gripe', 0],['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
   .field
     =f.label :gripe3
     %br
-    =f.select(:gripe1, options_for_select([['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
+    =f.select(:gripe1, options_for_select([['choose a gripe', 0],['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
   .field
     =f.label :gripe4
     %br
-    =f.select(:gripe1, options_for_select([['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
+    =f.select(:gripe1, options_for_select([['choose a gripe', 0],['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
+  %hr
   .field
-    = f.label :picture
+    %h3 Add a picture
     %br/
-    = f.file_field :picture
-    %b OR take photo here ++++
+    .select_file_field
+      .select_file_wrapper
+        = f.file_field :picture
+      %button select file  
+    Or take a picture now
+    =link_to('take photo', "/camera", :id => "take-photo") 
+  %hr  
   .field
-    = f.label :comment
+    %h3 Add a comment
     %br/
     = f.text_area :comment
-  %h3 Where did this happen?  
-  %b Enter address  
-  .field
-    = f.label :bus_stop
-    %br/
-    = f.text_field :bus_stop
-  %b OR Enter address  
+  %hr  
+  %h3 Where did this happen?
   .field
     = f.label :address
     %br/
     = f.text_field :address
+  %b or enter bus stop
+  %br/  
   .field
-    = f.submit
+    = f.label :bus_stop
+    %br/
+    = f.text_field :bus_stop
+  
+
+    / .field
+    /   = f.submit
+  %button.create_gripe create gripe
+  %hr
