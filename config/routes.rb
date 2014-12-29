@@ -9,6 +9,9 @@ BusGripesApp::Application.routes.draw do
   get '/camera', to: "camera#index"
 
   get '/maps', to: "maps#index"
+
+
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
