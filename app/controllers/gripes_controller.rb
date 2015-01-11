@@ -46,6 +46,7 @@ class GripesController < ApplicationController
   # POST /gripes
   # POST /gripes.json
   def create
+    binding.pry
     @gripe = Gripe.new(params[:gripe])
     @gripe.user_id = current_user.id
     # current_user.gripes.new(params[:gripe])

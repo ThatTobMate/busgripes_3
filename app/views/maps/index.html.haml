@@ -3,6 +3,9 @@
 :javascript
   var gripes_data =  #{@gripes.to_json}
 
+%form{:action => "/maps", :method => "POST", :name => "gripe_map_select"}
+  = select_tag(:gripe_map_select, options_for_select([['choose a gripe', 0],['All Gripes', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8],['Bus didn\'t stop', 9]],0))
+  %button Show Map
+
 #map-canvas
   #map
-  / %button#toggleHeatmap Toggle Heatmap

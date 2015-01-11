@@ -9,6 +9,7 @@ BusGripesApp::Application.routes.draw do
   get '/camera', to: "camera#index"
 
   get '/maps', to: "maps#index"
+  post '/maps', to: "maps#index"
 
 
   
