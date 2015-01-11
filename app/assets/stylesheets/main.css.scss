@@ -132,15 +132,6 @@
 */
   }
 
-  #take-photo{
-    background-color: green;
-    font-size: 14px;
-    padding: 10px;
-    border-radius: 5px;
-    color: white;
-    text-decoration: none;
-  }
-
   .container{
     background-color: rgb(134, 198, 197);
     width: 500px;
@@ -243,3 +234,33 @@
     border: none;
     background-color: green;
   }
+
+  .select_file_wrapper, .take_pic_wrapper {
+    display: inline-block;
+  }
+
+  .take_pic_wrapper{
+    margin-left: 40px;
+    a{
+      margin-left: 40px;
+      background-color: rgb(27, 101, 27);
+      transition: 0.3s ease-in;
+      font-size: 14px;
+      padding: 10px;
+      border-radius: 5px;
+      color: white;
+      text-decoration: none;
+    }
+    a:hover{
+      background-color: green;
+    }
+  }
+
+/*    #take-photo{
+    background-color: green;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+  }*/

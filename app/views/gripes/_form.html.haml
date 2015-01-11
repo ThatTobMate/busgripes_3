@@ -23,19 +23,19 @@
   .field
     =f.label :gripe1
     %br
-    =f.select(:gripe1, options_for_select([['choose a gripe', 0],['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
+    =f.select(:gripe1, options_for_select([['choose a gripe', 0],['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8]]) )
   .field
     =f.label :gripe2
     %br
-    =f.select(:gripe1, options_for_select([['choose a gripe', 0],['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
+    =f.select(:gripe1, options_for_select([['choose a gripe', 0],['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8]]) )
   .field
     =f.label :gripe3
     %br
-    =f.select(:gripe1, options_for_select([['choose a gripe', 0],['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
+    =f.select(:gripe1, options_for_select([['choose a gripe', 0],['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8]]) )
   .field
     =f.label :gripe4
     %br
-    =f.select(:gripe1, options_for_select([['choose a gripe', 0],['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4]]) )
+    =f.select(:gripe1, options_for_select([['choose a gripe', 0],['Bus didn\'t stop', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8]]) )
   %hr
   .field
     %h3 Add a picture
@@ -44,8 +44,9 @@
       .select_file_wrapper
         = f.file_field :picture
       %button select file  
-    Or take a picture now
-    =link_to('take photo', "/camera", :id => "take-photo") 
+      .take_pic_wrapper
+        Or 
+        =link_to('take photo', "/camera", :id => "take-photo") 
   %hr  
   .field
     %h3 Add a comment
