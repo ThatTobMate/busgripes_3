@@ -9,6 +9,13 @@ class MapsController < ApplicationController
     else
       @gripes = Gripe.where(gripe1: @input) + Gripe.where(gripe2: @input) + Gripe.where(gripe3: @input) + Gripe.where(gripe4: @input)
     end
+
+    @hash = Gmaps4rails.build_markers(@users) do |user, marker |
+    marker.lat gripe.latitude
+    marker.lng gripe.longitude
+    end
+  
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @gripes }
