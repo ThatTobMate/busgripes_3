@@ -11,6 +11,8 @@ BusGripesApp::Application.routes.draw do
   get '/maps', to: "maps#index"
   post '/maps', to: "maps#index"
 
+  get '/about', to "about#index"
+
 
   
   # The priority is based upon order of creation:
