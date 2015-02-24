@@ -1,0 +1,88 @@
+<%= form_for(@gripe) do |f| %>
+  <% if @gripe.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@gripe.errors.count, "error") %>
+        prohibited this gripe from being saved:
+      </h2>
+      <ul>
+        <% @gripe.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <hr/>
+  <h3>What's the bus number?        </h3>
+  <div class="field">
+    <%= f.label :bus_number %>
+    <br/>
+    <%= f.text_field :bus_number %>
+  </div>
+
+  <hr/>
+  <h3>What's your gripe?  </h3>
+  <div class="field">
+    <%= f.label :gripe1 %>
+    <br/>
+    <%= f.select(:gripe1, options_for_select([['choose a gripe', 0],['All Gripes', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8],['Bus didn\'t stop', 9]],0) ) %>
+  </div>
+  <div class="field">
+    <%= f.label :gripe2 %>
+    <br/>
+    <%= f.select(:gripe2, options_for_select([['choose a gripe', 0],['All Gripes', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8],['Bus didn\'t stop', 9]],0) ) %>
+  </div>
+  <div class="field">
+    <%= f.label :gripe3 %>
+    <br/>
+    <%= f.select(:gripe3, options_for_select([['choose a gripe', 0],['All Gripes', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8],['Bus didn\'t stop', 9]],0) ) %>
+  </div>
+  <div class="field">
+    <%= f.label :gripe4 %>
+    <br/>
+    <%= f.select(:gripe4, options_for_select([['choose a gripe', 0],['All Gripes', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8],['Bus didn\'t stop', 9]],0) ) %>
+  </div>
+  <hr/>
+  <div class="field">
+    <h3>Add a picture</h3>
+    <br/>
+    <div class="select_file_field">
+      <div class="select_file_wrapper">
+        <%= f.file_field :picture %>
+      </div>
+      <button>select file  </button>
+      <div class="take_pic_wrapper">
+        Or 
+        <%= link_to('take photo', "/camera", :id => "take-photo")  %>
+      </div>
+    </div>
+  </div>
+  <hr/>
+  <div class="field">
+    <h3>Add a comment</h3>
+    <br/>
+    <%= f.text_area :comment %>
+  </div>
+  <hr/>
+  <h3>Where did this happen?</h3>
+  <div class="field">
+    <%= f.label :address %>
+    <br/>
+    <%= f.text_field :address %>
+  </div>
+  <b>or enter bus stop</b>
+  <br/>
+  <div class="field">
+    <%= f.label :bus_stop %>
+    <br/>
+    <%= f.text_field :bus_stop %>
+    <!-- .field
+    -->
+    <!--   = f.submit
+    -->
+  </div>
+  <button class="create_gripe">create gripe</button>
+  <hr/>
+<% end %>
