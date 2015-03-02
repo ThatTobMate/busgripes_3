@@ -1,27 +1,41 @@
 $(document).ready(function(){
-  var text = document.getElementById("comms");
-  debugger
+
+  // menu button
+
+$('nav button').click(function() {
+  $(this).toggleClass('expanded').next('ul').slideToggle(200);
+});
+
+// $('.menu button').click(function() {
+//   $(this).toggleClass('expanded').siblings('li').slideToggle().css("display": "block;");
+// });
+
+
+
+  // // geolocation
+  var commsElement = $('#comms');
+  var geoLat;
+  var geoLong;
+
+
+  function showPosition(position) {
+      geoLat = parseFloat(position.coords.latitude);
+      geoLong = parseFloat(position.coords.longitude);
+      $('#gripe_latitude').val(geoLat);
+      $('#gripe_longitude').val(geoLong);
+  }
 
   function getLocation() {
-    var latitude = '';
-    var longitude = '';
+      geoLat = null;
+      geoLong = null;
       if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(showPosition);
-          var latitude = position.coords.latitude;
-          var longitude = position.coords.longitude;
       } else { 
-          text.innerHTML = "Geolocation is not supported by this browser.";
+          text.innerHTML = "Geolocation is not supported by this browser or permission was denied.";
       }
   }
 
-  function showPosition(position) {
-      text.innerHTML = "Latitude: " + position.coords.latitude + 
-      "<br>Longitude: " + position.coords.longitude;  
-  }
-
-  $('.geolocation-button').click(getLocation);
-
-  console.log(latitude + " " + longitude);
+  $('.geolocation-button').on('click', getLocation);
 
 });
 

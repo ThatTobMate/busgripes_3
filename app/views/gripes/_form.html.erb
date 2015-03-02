@@ -1,4 +1,4 @@
-<div data-role="content">
+<div class="new-gripe">
   <%= form_for(@gripe) do |f| %>
   <% if @gripe.errors.any? %>
     <div id="error_explanation">
@@ -77,8 +77,9 @@
 
   <hr/>
   <h3>Where did this happen?</h3>
-  <div class="geolocation-button">Use my current location</div>
-  <p id="comms"></p>
+  <div class="geolocation-button">current location</div>
+    <%= f.hidden_field :latitude %>
+    <%= f.hidden_field :longitude %>
   or
   <div class="field address-input">
     <%= f.label :address %>
@@ -87,20 +88,15 @@
   </div>
 
   <hr/>
-  <h3>When did this happen?</h3>
-  <p>It happened in the past 10 mins</p>
-  or
-  <time></time>
-<!--   <b>or enter bus stop</b>
-  <br/>
   <div class="field">
-    <%#= f.label :bus_stop %>
-    <br/>
-    <%#= f.text_field :bus_stop %> -->
-    <!-- .field
-    -->
-   <%= f.submit "Create Gripe" %>  </div>
-<!--   <input class="create_gripe" type="submit">create gripe</input> -->
+    <h3>When did this happen?</h3>
+    <p class="time-button">past 10 mins</p>
+    <%#= f.select_datetime :occurence %>
+  </div>
+
+   <%= f.submit "Submit Gripe", :class => "submit-gripe-btn" %>  
+  
+
   <hr/>
   <% end %> 
 </div>

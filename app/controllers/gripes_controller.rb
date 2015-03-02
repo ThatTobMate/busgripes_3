@@ -46,9 +46,12 @@ class GripesController < ApplicationController
   # POST /gripes
   # POST /gripes.json
   def create
+
     @gripe = Gripe.new(params[:gripe])
     # binding.pry
     @gripe.user_id = current_user.id
+    # @gripe.latitude = params([])
+    # @gripe.longitude = 
 
     respond_to do |format|
       if @gripe.save

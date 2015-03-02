@@ -1,6 +1,10 @@
-<div data-role="content">
+<div class="homepage-container">
+   <p class="tagline">Tracking + mapping bus driving      </p>
   <div class="login-signup">
     <%= link_to 'Sign up', new_user_registration_path, :class => "login-signup-button" %>
     <%= link_to 'Login', new_user_session_path, :class => "login-signup-button" %>
+  </div>
+  <div class="homepage-about">
+    <%= link_to('about', '/about', :data => { :'data-transition' => 'flip'})  %>
   </div>
 </div>

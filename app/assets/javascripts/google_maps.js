@@ -63,9 +63,7 @@ function initialize() {
 
   map.fitBounds(bounds)
 
-
   console.log(gripeMarkers)
-
 
   var pointArray = new google.maps.MVCArray(gripeMarkers);
 
