@@ -20,7 +20,7 @@
   <div class="field">
     <%= f.label :bus_number %>
     <br/>
-    <%= f.text_field :bus_number %>
+    <%= f.text_field :bus_number, :placeholder => "e.g. 12" %>
   </div>
 
   <hr/>
@@ -28,7 +28,7 @@
   <div class="field">
     <%= f.label :registration %>
     <br/>
-    <%= f.text_field :registration %>
+    <%= f.text_field :registration, :placeholder => "e.g. BU05 XXX"  %>
   </div>
 
   <hr/>
@@ -57,9 +57,10 @@
   <div class="field">
     <h3>Add a picture</h3>
     <br/>
-    <div class="select_file_field">
-      <div class="select_file_wrapper">
-        <%= f.file_field :picture %>
+    <div class="upload_file_field">
+      <div class="upload-wrapper">
+        <div class="upload-button">upload</div>
+        <%= f.file_field :picture, :class => "upload" %>
       </div>
       <!-- <button>select file  </button> -->
 <!--       <div class="take_pic_wrapper">
@@ -83,7 +84,6 @@
   or
   <div class="field address-input">
     <%= f.label :address %>
-    <br/>
     <%= f.text_field :address %>
   </div>
 
@@ -93,7 +93,8 @@
     <p class="time-button">past 10 mins</p>
     <%#= f.select_datetime :occurence %>
   </div>
-
+  
+  <hr/>
    <%= f.submit "Submit Gripe", :class => "submit-gripe-btn" %>  
   
 

@@ -35,7 +35,12 @@ $('nav button').click(function() {
       }
   }
 
-  $('.geolocation-button').on('click', getLocation);
+  function hideAddress() {
+    $('.address-input input, .address-input label').hide();
+    $('.address-input').append('<p>Thank you. Current location logged.</p>')
+  }
+
+  $('.geolocation-button').on('click', getLocation, hideAddress);
 
 });
 

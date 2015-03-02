@@ -1,5 +1,15 @@
 <div class="homepage-container">
    <p class="tagline">Tracking + mapping bus driving      </p>
+  <div>
+   <% if user_signed_in? %>
+      Logged in:
+      <b>
+        <%= current_user.email %>
+      </b>
+    <% end %>      
+  </div> 
+
+
   <div class="login-signup">
     <%= link_to 'Sign up', new_user_registration_path, :class => "login-signup-button" %>
     <%= link_to 'Login', new_user_session_path, :class => "login-signup-button" %>
