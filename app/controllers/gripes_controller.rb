@@ -48,11 +48,9 @@ class GripesController < ApplicationController
   def create
 
     @gripe = Gripe.new(params[:gripe])
-    # binding.pry
     @gripe.user_id = current_user.id
-    # @gripe.latitude = params([])
-    # @gripe.longitude = 
-
+    @gripe.latitude = @gripe.latitude.to_f
+    @gripe.longitude = @gripe.longitude.to_f 
     respond_to do |format|
       if @gripe.save
         format.html { redirect_to @gripe, notice: 'Gripe was successfully created.' }

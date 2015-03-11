@@ -13,6 +13,10 @@ gem 'gmaps4rails'
 gem 'pg'
 gem 'rails_12factor'
 gem 'jquery-rails', '~> 3.1.2'
+gem 'carrierwave', '0.9.0'
+gem 'rmagick'
+gem "fog", "~> 1.3.1"
+
 
 # Gems used only for assets and not required
 # in production environments by default.

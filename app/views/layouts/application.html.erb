@@ -1,7 +1,9 @@
 <head>
   <title>BusGripesApp</title>
+  <meta name="description" content="Mapping and tracking bad bus driving.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" rel="stylesheet" type="text/css"></link>
+  <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <!-- google fonts -->
@@ -22,7 +24,7 @@
       <button>menu</button>
       <ul>
         <li>
-        <%= link_to('about', '/about', :data => { :'data-transition' => 'flip'} )  %>
+        <%= link_to('about', '/about' )  %>
         </li>
         <li>
           <%= link_to('contact', 'mailto:jody@jodykingett.com') %>
@@ -30,10 +32,7 @@
           <li>
             <div >
               <% if user_signed_in? %>
-                Logged in:
-                <b>
-                  <%= current_user.email %>
-                </b>
+                <p class="logged-in-email">Logged in:<%= current_user.email %></p>
                 <div class="edit_login_logout">
                   <%= link_to 'Edit Profile', edit_user_registration_path %>
                   \|

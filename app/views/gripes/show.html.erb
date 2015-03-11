@@ -2,6 +2,14 @@
   <p id="notice"><%= notice %></p>
 
   <p>
+    <b>Bus Number:</b>
+    <%= @gripe.bus_number %>
+  </p>
+  <p>
+    <b>Registration:</b>
+    <%= @gripe.registration %>
+  </p>
+  <p>
     <b>Gripe1:</b>
     <%= @gripe.gripe1 %>
   </p>
@@ -22,18 +30,13 @@
   </p>
 
   <p>
-    <b>Picture:</b>
-    <%= @gripe.picture %>
+      <b>Image:</b>
+      <%= image_tag @gripe.gripe_photo.basic.url %>
   </p>
 
   <p>
     <b>Comment:</b>
     <%= @gripe.comment %>
-  </p>
-
-  <p>
-    <b>Bus stop:</b>
-    <%= @gripe.bus_stop %>
   </p>
 
   <p>
@@ -44,6 +47,11 @@
   <p>
     <b>Map long:</b>
     <%= @gripe.longitude %>
+  </p>
+
+  <p>
+    <b>Occurence:</b>
+    <%= @gripe.occurence %>
   </p>
 
 

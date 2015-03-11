@@ -58,9 +58,9 @@
     <h3>Add a picture</h3>
     <br/>
     <div class="upload_file_field">
-      <div class="upload-wrapper">
-        <div class="upload-button">upload</div>
-        <%= f.file_field :picture, :class => "upload" %>
+      <div class="upload-button">
+        <span>upload</span>
+        <%= f.file_field :gripe_photo, :class => "upload" %>
       </div>
       <!-- <button>select file  </button> -->
 <!--       <div class="take_pic_wrapper">
@@ -79,10 +79,11 @@
   <hr/>
   <h3>Where did this happen?</h3>
   <div class="geolocation-button">current location</div>
-    <%= f.hidden_field :latitude %>
-    <%= f.hidden_field :longitude %>
-  or
+    <%= f.hidden_field :latitude , :id => "gripe_latitude" %>
+    <%= f.hidden_field :longitude, :id => "gripe_longitude" %>
+  <p id="comms"></p>  
   <div class="field address-input">
+    <p>or</p>
     <%= f.label :address %>
     <%= f.text_field :address %>
   </div>
@@ -90,8 +91,11 @@
   <hr/>
   <div class="field">
     <h3>When did this happen?</h3>
-    <p class="time-button">past 10 mins</p>
-    <%#= f.select_datetime :occurence %>
+    <div class="time-button">past 10 mins</div>
+    <p class="ten-min-selected"></p>
+    <div class="date-time-select">
+      <%= f.datetime_select(:occurence, prompt: true) %>
+    </div>
   </div>
   
   <hr/>

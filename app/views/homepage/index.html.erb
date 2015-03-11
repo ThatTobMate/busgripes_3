@@ -2,10 +2,7 @@
    <p class="tagline">Tracking + mapping bus driving      </p>
   <div>
    <% if user_signed_in? %>
-      Logged in:
-      <b>
-        <%= current_user.email %>
-      </b>
+   <p class="logged-in-email">Logged in:<%= current_user.email %></p>
     <% end %>      
   </div> 
 
