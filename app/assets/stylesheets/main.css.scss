@@ -402,6 +402,24 @@ $Muli: 'Muli', sans-serif;
         background-color: rgb(48, 91, 27);
       }
     }
+    
+    h3{
+      display: inline-block;
+    }
+    .required{
+      display: inline-block;
+      color: tomato;
+    }
+  }
+
+/* Show page +++++++ */
+
+  .show-page{
+    margin-top: 40px;
+    text-align: left;
+    b{
+      color: $neutralbutton-hover;
+    }
   }
 
   /*map page*/

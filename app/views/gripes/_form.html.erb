@@ -16,7 +16,7 @@
     </div>
   <% end %>
   <hr/>
-  <h3>What's the bus number?        </h3>
+  <h3>What's the bus number?</h3>
   <div class="field">
     <%#= f.label :bus_number %>
     <%= f.text_field :bus_number, :placeholder => "e.g. 12" %>
@@ -31,25 +31,22 @@
 
   <hr/>
   <h3>What's your gripe?  </h3>
+  <p class="required">(At least one required)</p>
   <div class="field">
     <%= f.label :gripe1%>
-    <br/>
     <%= f.select(:gripe1, options_for_select([['choose a gripe', 0],['Dangerous driving', 'Dangerous driving'], ['Bicycle accident', 'Bicycle accident'],['Wheelchair problem', 'Wheelchair problem'],['Child buggy problem', 'Child buggy problem'],['Jumped Red Lights', 'Jumped Red Lights'],['Didn\'t stop at pedestrian crossing', 'Didn\'t stop at pedestrian crossing'],['Motorbike accident', 'Motorbike accident'],['Pedestrian accident', 'Pedestrian accident'],['Didn\'t stop at bus stop', 'Didn\'t stop at bus stop']],0), :required => true) %>
   </div>
   <div class="field">
     <%= f.label :gripe2 %>
-    <br/>
-    <%= f.select(:gripe2, options_for_select([['choose a gripe', 0],['Dangerous driving', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8],['Bus didn\'t stop', 9]],0) ) %>
+      <%= f.select(:gripe2, options_for_select([['choose a gripe', 0],['Dangerous driving', 'Dangerous driving'], ['Bicycle accident', 'Bicycle accident'],['Wheelchair problem', 'Wheelchair problem'],['Child buggy problem', 'Child buggy problem'],['Jumped Red Lights', 'Jumped Red Lights'],['Didn\'t stop at pedestrian crossing', 'Didn\'t stop at pedestrian crossing'],['Motorbike accident', 'Motorbike accident'],['Pedestrian accident', 'Pedestrian accident'],['Didn\'t stop at bus stop', 'Didn\'t stop at bus stop']],0)) %>
   </div>
   <div class="field">
     <%= f.label :gripe3 %>
-    <br/>
-    <%= f.select(:gripe3, options_for_select([['choose a gripe', 0],['Dangerous driving', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8],['Bus didn\'t stop', 9]],0) ) %>
+      <%= f.select(:gripe3, options_for_select([['choose a gripe', 0],['Dangerous driving', 'Dangerous driving'], ['Bicycle accident', 'Bicycle accident'],['Wheelchair problem', 'Wheelchair problem'],['Child buggy problem', 'Child buggy problem'],['Jumped Red Lights', 'Jumped Red Lights'],['Didn\'t stop at pedestrian crossing', 'Didn\'t stop at pedestrian crossing'],['Motorbike accident', 'Motorbike accident'],['Pedestrian accident', 'Pedestrian accident'],['Didn\'t stop at bus stop', 'Didn\'t stop at bus stop']],0)) %>
   </div>
   <div class="field">
     <%= f.label :gripe4 %>
-    <br/>
-    <%= f.select(:gripe4, options_for_select([['choose a gripe', 0],['Dangerous driving', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8],['Bus didn\'t stop', 9]],0) ) %>
+      <%= f.select(:gripe4, options_for_select([['choose a gripe', 0],['Dangerous driving', 'Dangerous driving'], ['Bicycle accident', 'Bicycle accident'],['Wheelchair problem', 'Wheelchair problem'],['Child buggy problem', 'Child buggy problem'],['Jumped Red Lights', 'Jumped Red Lights'],['Didn\'t stop at pedestrian crossing', 'Didn\'t stop at pedestrian crossing'],['Motorbike accident', 'Motorbike accident'],['Pedestrian accident', 'Pedestrian accident'],['Didn\'t stop at bus stop', 'Didn\'t stop at bus stop']],0)) %>
   </div>
   <hr/>
   <div class="field picture-field">
@@ -75,6 +72,7 @@
 
   <hr/>
   <h3>Where did this happen?</h3>
+  <p class="required">(required)</p>
   <div class="geolocation-button">current location</div>
     <%= f.hidden_field :latitude , :id => "gripe_latitude" %>
     <%= f.hidden_field :longitude, :id => "gripe_longitude" %>
@@ -88,6 +86,7 @@
   <hr/>
   <div class="field">
     <h3>When did this happen?</h3>
+    <p class="required">(required)</p>
     <div class="time-button">past 10 mins</div>
     <p class="or">or enter time below</p>
     <p class="ten-min-selected"></p>
