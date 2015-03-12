@@ -13,7 +13,8 @@ BusGripesApp::Application.routes.draw do
 
   get '/about', to: "about#index"
 
-
+  match 'message' => 'message#new', :as => 'contact', :via => :get
+  match 'message' => 'message#create', :as => 'contact', :via => :post
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

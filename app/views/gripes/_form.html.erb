@@ -18,46 +18,43 @@
   <hr/>
   <h3>What's the bus number?        </h3>
   <div class="field">
-    <%= f.label :bus_number %>
-    <br/>
+    <%#= f.label :bus_number %>
     <%= f.text_field :bus_number, :placeholder => "e.g. 12" %>
   </div>
 
   <hr/>
   <h3>What's the registration number?        </h3>
   <div class="field">
-    <%= f.label :registration %>
-    <br/>
-    <%= f.text_field :registration, :placeholder => "e.g. BU05 XXX"  %>
+    <%#= f.label :registration %>
+    <%= f.text_field :registration, :placeholder => "e.g. BU05 XXX", :pattern => '^([A-Z]{3}\s?(\d{3}|\d{2}|d{1})\s?[A-Z])|([A-Z]\s?(\d{3}|\d{2}|\d{1})\s?[A-Z]{3})|(([A-HK-PRSVWY][A-HJ-PR-Y])\s?([0][2-9]|[1-9][0-9])\s?[A-HJ-PR-Z]{3})$'  %>
   </div>
 
   <hr/>
   <h3>What's your gripe?  </h3>
   <div class="field">
-    <%= f.label :gripe1 %>
+    <%= f.label :gripe1%>
     <br/>
-    <%= f.select(:gripe1, options_for_select([['choose a gripe', 0],['All Gripes', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8],['Bus didn\'t stop', 9]],0) ) %>
+    <%= f.select(:gripe1, options_for_select([['choose a gripe', 0],['Dangerous driving', 'Dangerous driving'], ['Bicycle accident', 'Bicycle accident'],['Wheelchair problem', 'Wheelchair problem'],['Child buggy problem', 'Child buggy problem'],['Jumped Red Lights', 'Jumped Red Lights'],['Didn\'t stop at pedestrian crossing', 'Didn\'t stop at pedestrian crossing'],['Motorbike accident', 'Motorbike accident'],['Pedestrian accident', 'Pedestrian accident'],['Didn\'t stop at bus stop', 'Didn\'t stop at bus stop']],0), :required => true) %>
   </div>
   <div class="field">
     <%= f.label :gripe2 %>
     <br/>
-    <%= f.select(:gripe2, options_for_select([['choose a gripe', 0],['All Gripes', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8],['Bus didn\'t stop', 9]],0) ) %>
+    <%= f.select(:gripe2, options_for_select([['choose a gripe', 0],['Dangerous driving', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8],['Bus didn\'t stop', 9]],0) ) %>
   </div>
   <div class="field">
     <%= f.label :gripe3 %>
     <br/>
-    <%= f.select(:gripe3, options_for_select([['choose a gripe', 0],['All Gripes', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8],['Bus didn\'t stop', 9]],0) ) %>
+    <%= f.select(:gripe3, options_for_select([['choose a gripe', 0],['Dangerous driving', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8],['Bus didn\'t stop', 9]],0) ) %>
   </div>
   <div class="field">
     <%= f.label :gripe4 %>
     <br/>
-    <%= f.select(:gripe4, options_for_select([['choose a gripe', 0],['All Gripes', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8],['Bus didn\'t stop', 9]],0) ) %>
+    <%= f.select(:gripe4, options_for_select([['choose a gripe', 0],['Dangerous driving', 1], ['Bicycle accident', 2],['Wheelchair problem', 3],['Child buggy problem', 4],['Jumped Red Lights', 5],['Didn\'t stop at pedestrian crossing',6],['Motorbike accident',7],['Pedestrian accident',8],['Bus didn\'t stop', 9]],0) ) %>
   </div>
   <hr/>
-  <div class="field">
+  <div class="field picture-field">
     <h3>Add a picture</h3>
-    <br/>
-    <div class="upload_file_field">
+    <div class="upload-file-container">
       <div class="upload-button">
         <span>upload</span>
         <%= f.file_field :gripe_photo, :class => "upload" %>
@@ -81,9 +78,9 @@
   <div class="geolocation-button">current location</div>
     <%= f.hidden_field :latitude , :id => "gripe_latitude" %>
     <%= f.hidden_field :longitude, :id => "gripe_longitude" %>
+  <p class="or">or enter address below</p>
   <p id="comms"></p>  
   <div class="field address-input">
-    <p>or</p>
     <%= f.label :address %>
     <%= f.text_field :address %>
   </div>
@@ -92,6 +89,7 @@
   <div class="field">
     <h3>When did this happen?</h3>
     <div class="time-button">past 10 mins</div>
+    <p class="or">or enter time below</p>
     <p class="ten-min-selected"></p>
     <div class="date-time-select">
       <%= f.datetime_select(:occurence, prompt: true) %>
@@ -100,9 +98,7 @@
   
   <hr/>
    <%= f.submit "Submit Gripe", :class => "submit-gripe-btn" %>  
-  
 
-  <hr/>
   <% end %> 
 </div>
 
