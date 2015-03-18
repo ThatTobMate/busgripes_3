@@ -27,22 +27,28 @@
         <%= link_to('about', '/about' )  %>
         </li>
         <li>
-          <%= link_to('contact', 'mailto:jody@jodykingett.com') %>
+          <%= link_to 'new gripe', new_gripe_path  %>
+        </li>
+        <li>
+          <%= link_to 'maps', maps_path  %>
+        </li>
+        <li>
+          <%= link_to('contact / feedback', 'mailto:info@busgripes.com') %>
         </li>
           <li>
             <div >
               <% if user_signed_in? %>
                 <p class="logged-in-email">Logged in:<%= current_user.email %></p>
                 <div class="edit_login_logout">
-                  <%= link_to 'Edit Profile', edit_user_registration_path %>
-                  \|
-                  <%= link_to 'Logout',  destroy_user_session_path, method: :delete %>
+                  <%= link_to 'Edit Profile', edit_user_registration_path, :class => "edit-logout"%>
+                  |
+                  <%= link_to 'Logout',  destroy_user_session_path, method: :delete, :class => "edit-logout" %>
                 </div>
               <% else %>
                 <div class="edit_login_logout">
-                  <%= link_to 'Sign up', new_user_registration_path %>
-                  \|
-                  <%= link_to 'Login', new_user_session_path %>
+                  <%= link_to 'Sign up', new_user_registration_path, :class => "edit-logout" %>
+                  /
+                  <%= link_to 'Login', new_user_session_path, :class => "edit-logout" %>
                 </div>
               <% end %>
               <% flash.each do |name, msg| %>

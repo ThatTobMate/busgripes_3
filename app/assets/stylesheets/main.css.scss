@@ -5,9 +5,9 @@ $neutralbutton: #957120;
 $neutralbutton-hover: #A78844;
 $neutralbutton-click: #75550D;
 $hover-purple: rgb(41, 40, 91);
+$yellow-text: #AA5;
 $Muli: 'Muli', sans-serif;
 
-@media screen and (min-width: 320px){
 
   body{
     background-color: $background-blue;
@@ -64,6 +64,10 @@ $Muli: 'Muli', sans-serif;
 
   h2{
     margin: 0;
+  }
+
+  .optional{
+    color: $yellow-text;
   }
 
   /* sticky footer */
@@ -139,6 +143,17 @@ $Muli: 'Muli', sans-serif;
         background-color: #EEE;
         border-bottom: 1px solid #333;
         border-top: 1px solid #FFF;
+        a{
+          color: $background-blue;
+          &:hover{
+          color: blue;
+          }
+          &:active{
+          text-decoration: underline;
+          }
+        }
+       
+
       }
     }
     button{
@@ -168,8 +183,19 @@ $Muli: 'Muli', sans-serif;
     }
   }
 
-  nav a:hover{
-    color: pink;
+  .edit-logout{
+    background-color: $neutralbutton;
+    padding: 5px;
+    color: $fontcolor-offwhite;
+    &:visited{
+      color: $fontcolor-offwhite;
+    }
+    &:hover{
+    background-color: $neutralbutton-hover;
+    }
+    &:active{
+      background-color: $neutralbutton-click;
+    }
   }
 
   /* homepage*/
@@ -267,6 +293,35 @@ $Muli: 'Muli', sans-serif;
   .logged-in-email{
     padding: 5px;
     background-color: $hover-purple;
+  }
+
+  .devise-links a{
+    color: $fontcolor-offwhite;
+  }
+
+  /* edit user */
+
+  .edit-submit input, .login-submit input, .signup-submit input{
+      font-size: 16px;
+      width: 80px;
+      padding: 5px;
+      height: 45px;
+      border-color: #555;
+      border-radius: 5px;
+      background-color: rgb(82, 126, 61);
+      color: $fontcolor-offwhite ; 
+      &:hover{
+        background-color: rgb(117, 171, 91);
+      }
+      &:active{
+        background-color: rgb(48, 91, 27);
+      }
+  }
+
+  .cancel-account{
+    background-color: tomato;
+    color: $fontcolor-offwhite !important;
+    border: #555;
   }
 
   /* new gripe*/
@@ -466,4 +521,3 @@ $Muli: 'Muli', sans-serif;
   }
 
 
-}

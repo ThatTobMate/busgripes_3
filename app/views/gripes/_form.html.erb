@@ -16,14 +16,14 @@
     </div>
   <% end %>
   <hr/>
-  <h3>What's the bus number?</h3>
+  <h3>What's the bus number?</h3><span class="optional"> (optional)</span>
   <div class="field">
     <%#= f.label :bus_number %>
     <%= f.text_field :bus_number, :placeholder => "e.g. 12" %>
   </div>
 
   <hr/>
-  <h3>What's the registration number?        </h3>
+  <h3>What's the registration number?</h3><span class="optional"> (optional)</span>
   <div class="field">
     <%#= f.label :registration %>
     <%= f.text_field :registration, :placeholder => "e.g. BU05 XXX", :pattern => '^([A-Z]{3}\s?(\d{3}|\d{2}|d{1})\s?[A-Z])|([A-Z]\s?(\d{3}|\d{2}|\d{1})\s?[A-Z]{3})|(([A-HK-PRSVWY][A-HJ-PR-Y])\s?([0][2-9]|[1-9][0-9])\s?[A-HJ-PR-Z]{3})$'  %>
@@ -50,7 +50,7 @@
   </div>
   <hr/>
   <div class="field picture-field">
-    <h3>Add a picture</h3>
+    <h3>Add a picture</h3><span class="optional"> (optional)</span>
     <div class="upload-file-container">
       <div class="upload-button">
         <span>upload</span>
@@ -65,7 +65,7 @@
   </div>
   <hr/>
   <div class="field">
-    <h3>Add a comment</h3>
+    <h3>Add a comment</h3><span class="optional"> (optional)</span>
     <br/>
     <%= f.text_area :comment %>
   </div>

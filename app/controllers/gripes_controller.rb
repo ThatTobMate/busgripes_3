@@ -50,7 +50,8 @@ class GripesController < ApplicationController
     @gripe = Gripe.new(params[:gripe])
     @gripe.user_id = current_user.id
     @gripe.latitude = @gripe.latitude.to_f
-    @gripe.longitude = @gripe.longitude.to_f 
+    @gripe.longitude = @gripe.longitude.to_f
+    @gripe.address = @gripe.address + " United Kingdom"
     respond_to do |format|
       if @gripe.save
         format.html { redirect_to @gripe, notice: 'Gripe was successfully created.' }

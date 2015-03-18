@@ -5,6 +5,7 @@
       <%= devise_error_messages! %>
 
       <div class="field">
+        <p>Note: your email will only be used to verify your data entry or to communicate directly with you. We will never pass on your details.</p>
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true %>
       </div>
@@ -12,7 +13,7 @@
       <div class="field">
         <%= f.label :password %>
         <% if @validatable %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <em class="optional">(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
@@ -22,7 +23,7 @@
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
 
-      <div class="actions">
+      <div class="actions signup-submit">
         <%= f.submit "Sign up" %>
       </div>
     <% end %>
