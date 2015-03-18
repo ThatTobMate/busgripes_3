@@ -6,6 +6,9 @@ class Gripe < ActiveRecord::Base
   belongs_to :user
 
   geocoded_by :address
-  after_validation :geocode 
+  reverse_geocoded_by :latitude, :longitude, :address => :address
+
+  after_validation :geocode, :reverse_geocode # auto-fetch address 
+
 
 end

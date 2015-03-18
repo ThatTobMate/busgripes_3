@@ -70,6 +70,12 @@ $Muli: 'Muli', sans-serif;
     color: $yellow-text;
   }
 
+  .notice{
+    color: $fontcolor-offwhite;
+    background-color: green;
+    padding: 5px;
+  }
+
   /* sticky footer */
   .gripe-map-btns-wrapper{
     height: 35px;

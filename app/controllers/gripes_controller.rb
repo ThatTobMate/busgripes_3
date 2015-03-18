@@ -51,10 +51,14 @@ class GripesController < ApplicationController
     @gripe.user_id = current_user.id
     @gripe.latitude = @gripe.latitude.to_f
     @gripe.longitude = @gripe.longitude.to_f
+    if @gripe.occurence.nil?
+      @gripe.occurence = Time.now
+    end
+#NB REMOVE UK WHEN WORKED OUT GEOCODER COUNTRY PREFERNCES    
     @gripe.address = @gripe.address + " United Kingdom"
     respond_to do |format|
       if @gripe.save
-        format.html { redirect_to @gripe, notice: 'Gripe was successfully created.' }
+        format.html { redirect_to @gripe, notice: 'Gripe successfully created.' }
         format.json { render json: @gripe, status: :created, location: @gripe }
       else
         format.html { render action: "new" }

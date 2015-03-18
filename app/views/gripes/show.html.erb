@@ -1,7 +1,16 @@
 <div class="show-page">
   <h2>Your Gripe</h2>
+
+  <p class="notice"><%= notice %></p>
+
   <p>Your gripe has been submitted with the following information:</p>
-  <p id="notice"><%= notice %></p>
+  
+
+    <p>
+    <b>Occurence:</b>
+    <%= @gripe.occurence %>
+  </p>
+
   <p>
     <b>Bus Number:</b>
     <%= @gripe.bus_number %>
@@ -39,21 +48,23 @@
     <b>Comment:</b>
     <%= @gripe.comment %>
   </p>
-
+  
   <p>
+    <b>Address:</b>
+    <%= @gripe.address %>
+  </p>
+
+<!--   <p>
     <b>Map lat:</b>
-    <%= @gripe.latitude %>
+    <%#= @gripe.latitude %>
   </p>
 
   <p>
     <b>Map long:</b>
-    <%= @gripe.longitude %>
-  </p>
+    <%#= @gripe.longitude %>
+  </p> -->
 
-  <p>
-    <b>Occurence:</b>
-    <%= @gripe.occurence %>
-  </p>
+
 
 </div>
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150224161325) do
+ActiveRecord::Schema.define(:version => 20150310162726) do
 
   create_table "gripes", :force => true do |t|
     t.integer  "user_id"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20150224161325) do
     t.string   "registration_number"
     t.string   "registration"
     t.datetime "occurence"
+    t.string   "gripe_photo"
   end
 
   create_table "users", :force => true do |t|
