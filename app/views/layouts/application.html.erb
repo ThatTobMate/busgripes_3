@@ -20,11 +20,15 @@
     <header>
       <h1 class="title">BusGripes</h1>
       <%#= image_tag "sadface-1.png", :class => "logo" %>
+      <p class="tagline">mapping bad bus driving</p>
     <nav class="menu">
       <button>menu</button>
       <ul>
         <li>
         <%= link_to('about', '/about' )  %>
+        </li>
+          <li>
+        <%= link_to('donate', '#', :class => 'donate-button' )  %>
         </li>
         <li>
           <%= link_to 'new gripe', new_gripe_path  %>
