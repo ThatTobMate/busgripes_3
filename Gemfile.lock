@@ -154,6 +154,7 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    underscore-rails (1.8.2)
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -176,3 +177,4 @@ DEPENDENCIES
   rmagick
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
+  underscore-rails
