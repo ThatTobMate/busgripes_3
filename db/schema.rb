@@ -26,9 +26,8 @@ ActiveRecord::Schema.define(:version => 20150310162726) do
     t.float    "longitude"
     t.string   "bus_number"
     t.text     "address"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-    t.string   "registration_number"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "registration"
     t.datetime "occurence"
     t.string   "gripe_photo"
