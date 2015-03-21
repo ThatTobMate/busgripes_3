@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require underscore
 //= require gmaps/google
-//= require app.js
+//= require app
 //= require_tree .
