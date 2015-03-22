@@ -14,7 +14,7 @@ $('nav button').click(function() {
 
 
   // geolocation ++++++++++++++++++++
-  var text = $('#comms');
+  var text = $('#comms').val();
   var geoLat;
   var geoLong;
 
@@ -29,10 +29,11 @@ $('nav button').click(function() {
 
   function getLocation() {
     console.log('getlocation is being called')
+    console.log(text)
       geoLat = null;
       geoLong = null;
       if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(showPosition);
+          navigator.geolocation.getCurrentPosition(showPosition)
       } else { 
           text.innerHTML = "Geolocation not supported by this browser or permission denied.";
       }

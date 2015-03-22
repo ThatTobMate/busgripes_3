@@ -40,7 +40,7 @@ $(document).ready(function(){
 function initialize() {
   var mapOptions = {
     zoom: 15,
-    center: new google.maps.LatLng(51.5072, 0.1275),
+    center: new google.maps.LatLng(51.512268, -0.107288),
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     styles: mapStyle
   };
@@ -50,7 +50,7 @@ function initialize() {
 
   var gripeMarkers = [];
   var bounds = new google.maps.LatLngBounds();
-
+  console.log(gripes_data)
     // nb can attach any other info to marker here
   $.each(gripes_data, function(i, gripe){
     var gripe_marker = new google.maps.LatLng(gripe.latitude, gripe.longitude);

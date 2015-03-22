@@ -6,7 +6,7 @@ class GripesController < ApplicationController
 
   def index
     @gripes = Gripe.all
-    @hash = Gmaps4rails.build_markers(@users) do |user, marker |
+    @hash = Gmaps4rails.build_markers(@gripes) do |gripe, marker |
       marker.lat gripe.latitude
       marker.lng gripe.longitude
     end
@@ -54,8 +54,7 @@ class GripesController < ApplicationController
     if @gripe.occurence.nil?
       @gripe.occurence = Time.now
     end
-#NB REMOVE UK WHEN WORKED OUT GEOCODER COUNTRY PREFERNCES    
-    @gripe.address = @gripe.address + " United Kingdom"
+    @gripe.save
     respond_to do |format|
       if @gripe.save
         format.html { redirect_to @gripe, notice: 'Gripe successfully created.' }
