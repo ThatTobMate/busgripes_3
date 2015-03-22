@@ -55,6 +55,7 @@ class GripesController < ApplicationController
       @gripe.occurence = Time.now
     end
     @gripe.save
+    #Removed the address line as it was overriding the lat long and also called @gripe.save
     respond_to do |format|
       if @gripe.save
         format.html { redirect_to @gripe, notice: 'Gripe successfully created.' }
